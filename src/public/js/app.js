@@ -15,6 +15,7 @@ const QuizGame = () => {
     $(document).ready(function () {
       // console.log(questions);
       $('.start').on('click', startGame);
+      $('.scores').on('click', checkRankingSubmit);
     })
   }
 
@@ -138,9 +139,17 @@ const QuizGame = () => {
 
   const displayRankings = (currentPlayer) => {
     const players = JSON.parse(localStorage.getItem('players'));
-    sortArray(players);
-    // console.log(players);
-
+    
+    if(players !== null) {
+      sortArray(players);
+      players.forEach((player, index) => {
+        if (currentPlayer.name === player.name) {
+          playerList.append(`<li type="button" class="list-group-item font-weight-bold mt-3">${index + 1}. ${player.name} ${player.score}</li>`);
+        } else {
+          playerList.append(`<li type="button" class="list-group-item mt-3">${index + 1}. ${player.name} ${player.score}</li>`);
+        }
+      })
+    }
     const rankings = $(`<div class="card" style="width: 18rem;">
                       <div class= "card-header">
                         Score Table
@@ -148,16 +157,14 @@ const QuizGame = () => {
                     </div >`);
 
     const playerList = $('<ul class="list-group list-group-flush"></ul>');
-
-    players.forEach((player, index) => {
-      if (currentPlayer.name === player.name) {
-        playerList.append(`<li type="button" class="list-group-item font-weight-bold mt-3">${index + 1}. ${player.name} ${player.score}</li>`);
-      }else{
-        playerList.append(`<li type="button" class="list-group-item mt-3">${index + 1}. ${player.name} ${player.score}</li>`);
-      }
-    })
+    
     rankings.append(playerList);
     $('.score-table').append(rankings);
+  }
+
+  const checkRankingSubmit = () => {
+    $('.intro').hide();
+    displayRankings();
   }
 
   // Array that sorts the players array by the score
