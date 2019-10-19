@@ -46,7 +46,9 @@ Initial design of the app has the following deliverables:
 
 * After the game ends, the user can save their initials and score to a highscores view using local storage.
 
-![Demo My Code Quiz App](/docs/demo.gif?raw=true)
+## Demo
+
+![Demo My Code Quiz App](src/public/assets/showcase/demo.gif?raw=true)
 
 ## Development Strategy
 
