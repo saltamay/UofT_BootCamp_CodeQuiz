@@ -9,6 +9,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Custom CSS-->
+  <link rel="stylesheet" href="./src/public/css/main.css">
 
   <title>Code Quiz</title>
 </head>
@@ -16,30 +18,31 @@
 <body>
   <header>
     <!-- Image and text -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar mt-2 mb-2">
       <a class="navbar-brand" href="#">
-        <img src="#" width="30" height="30" class="d-inline-block align-top"
+        <img src="./src/public/assets/images/logo.svg" width="225" height="40" class="d-inline-block align-top"
           alt="">
-        Quizimo
       </a>
     </nav>
   </header>
   <main>
-    <div class="container d-flex justify-content-between mt-4">
+    <!-- <div class="container d-flex justify-content-between mt-4">
       <button type="button" class="btn scores">Score Table</button>
       <div class="time">Time</div>
-    </div>
+    </div> -->
     <div class="container mt-5 intro">
-      <div class="card text-center">
+      <div class="card">
         <div class="card-header">
-          <h1 class="text-center mt-2 mb-2">Quizimo</h1>
+          <h6 class="mt-1 mb-0 ml-1">Web Development</h6>
+          <img src="./src/public/assets/images/drawkit-content-man-colour.svg" alt="">
         </div>
         <div class="card-body">
-          <h5 class="card-title">Code Interview Challenges</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary start">Start</a>
+          <h4 class="card-title">Getting Started with JavaScript</h4>
+          <p class="card-text">Practice the fundamentals of JavaScript: syntax, variables, conditionals, and functions.</p>
         </div>
-        <div class="card-footer text-muted pt-4">
+        <div class="card-footer">
+          <img src="./src/public/assets/images/isolated-layout.svg" alt="">
+          <p class="start">Practice</p>
         </div>
       </div>
     </div>
