@@ -18,7 +18,7 @@
 <body>
   <header>
     <!-- Image and text -->
-    <nav class="navbar mt-2 mb-2">
+    <nav class="navbar">
       <a class="navbar-brand" href="#">
         <img src="./src/public/assets/images/logo.svg" width="225" height="40" class="d-inline-block align-top"
           alt="">
@@ -30,8 +30,47 @@
       <button type="button" class="btn scores">Score Table</button>
       <div class="time">Time</div>
     </div> -->
-    <div class="container mt-5 intro">
-      <div class="card">
+    <div class="jumbotron jumbotron-fluid catalog">
+      <div class="container">
+        <h1 class="display-5">Catalog</h1>
+        <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+      </div>
+    </div>
+    
+    <div class="languages">
+      <div class="container">
+        <h4>Languages</h4>
+        <div class="card language">
+          <!-- <div class="icon"></div> -->
+          <!-- <img src="./src/public/assets/images/html5-brands.svg" alt=""> -->
+          <div class="card-body">
+            <span class="lang_icon"><i class="fab fa-html5"></i></span>
+            <p class="lang_def">Learn HTML</p>
+          </div>
+        </div>
+        <div class="card language">
+          <div class="card-body">
+            <span class="lang_icon"><i class="fab fa-css3-alt"></i></span>
+            <p class="lang_def">Learn CSS</p>
+          </div>
+        </div>
+        <div class="card language">
+          <div class="card-body">
+            <span class="lang_icon"><i class="fab fa-js"></i></span>
+            <p class="lang_def">Intro to JavaScript</p>
+          </div>
+        </div>
+      </div>
+    </div>  
+    
+    <div class="outro">
+      <div class="container">
+        <img src="./src/public/assets/images/revenue-graph-colour-400px.png" alt="" class="background">
+      </div>
+    </div>
+    
+    <!-- <div class="container mt-5">
+      <div class="card intro">
         <div class="card-header">
           <h6 class="mt-1 mb-0 ml-1">Web Development</h6>
           <img src="./src/public/assets/images/drawkit-content-man-colour.svg" alt="">
@@ -45,12 +84,14 @@
           <p class="start">Practice</p>
         </div>
       </div>
-    </div>
-    <div class="container quiz mt-5"></div>
+    </div> -->
+    <!-- <div class="container quiz mt-5"></div>
     <div class="container score-card mt-5"></div>
-    <div class="container score-table mt-5"></div>
+    <div class="container score-table mt-5"></div> -->
   </main>
-  
+  <footer>
+    <p>Copyright&copy; Interview Camp</p>
+  </footer>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -63,6 +104,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/7053e21479.js" crossorigin="anonymous"></script>
   <script src="./src/public/js/questions.js"></script>
   <script src="./src/public/js/app.js"></script>
 </body>

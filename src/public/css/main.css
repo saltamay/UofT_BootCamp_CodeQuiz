@@ -2,46 +2,57 @@ nav {
   background-color: #00242B;
 }
 
-.card {
+.jumbotron {
+  background-color: #fff;
+  height: 275px;
+}
+
+.jumbotron.catalog {
+  background-image: url('../assets/images/drawkit-full-stack-man-colour-400px.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.intro {
   border: none;
   border-radius: 0;
 }
 
-.card-header:first-child {
+.intro .card-header:first-child {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
 
-.card-header {
+.intro .card-header {
   background-color: #7DE38D;
   color: #fff;
   padding: 0.5rem 0.5rem 0 0.5rem;
 }
 
-.card-header img {
+.intro .card-header img {
   width: 150px;
   float: right;
   margin-right: 0.75rem;
 }
 
-.card-body {
+.intro .card-body {
   border-left: 1px solid rgba(0, 36, 43, .3);
   border-right: 1px solid rgba(0, 36, 43, .3);
   padding: 1.5rem 1rem 2.5rem 1rem;
   /* padding-bottom: 1.5rem; */
 }
 
-.card-body p {
+.intro .card-body p {
   font-size: 0.9rem;
   line-height: 1.25;
 }
 
-.card-footer:last-child {
+.intro .card-footer:last-child {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
 
-.card-footer {
+.intro .card-footer {
   background-color: #00242B;
   color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.125);
@@ -49,12 +60,12 @@ nav {
   letter-spacing: 1px;;
 }
 
-.card-footer img {
+.intro .card-footer img {
   float: left;
   width: 30px;
 }
 
-.card-footer p {
+.intro .card-footer p {
   display: inline-block;
   font-weight: 600;
   margin: 0;
@@ -63,8 +74,87 @@ nav {
   text-transform: uppercase;
 }
 
-.card-footer p:hover {
+.intro .card-footer p:hover {
   cursor: pointer;
 }
 
+.catalog h1 {
+  color: #00242B;
+}
+
+/* .languages {
+  background-image: url('../assets/images/revenue-graph-colour-400px.png');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  background-origin: border-box;
+} */
+
+.languages h4 {
+  color: #00242B;
+  margin-bottom: 1.5rem;
+}
+
+.language {
+  box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.1);
+  background-color: #00242B;
+  color: #7DE38D;
+  margin-top: 0.75rem;
+  z-index: 10;
+}
+
+.language .card-body {
+  padding: 0.5rem;
+}
+
+.lang_icon {
+  float: left;
+  padding: 0.25rem 1.5rem 0.25rem 0.5rem;
+}
+
+.lang_def {
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+.fa-html5,
+.fa-css3-alt,
+.fa-js {
+  font-size: 2rem;
+}
+
+.language .card-body:hover {
+  box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, .25);
+  cursor: pointer;
+}
+
+.outro .container {
+  height: 200px;
+}
+
+.background {
+  display: block;
+  height: 300px;
+  position: relative;
+  top: -150px;
+  left: 50px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+footer {
+  background-color: #00242B;
+  color: #7DE38D;
+  
+  position: relative;
+  top: -10px;
+
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  padding: 1rem 0;
+}
 
