@@ -14,9 +14,52 @@ const QuizGame = () => {
   const init = () => {
     $(document).ready(function () {
       // console.log(questions);
-      $('.js').on('click', loadJsCards)
+      $('.html').on('click', loadHTMLCards);
+      $('.js').on('click', loadJsCards);
       $('.start').on('click', startGame);
       $('.scores').on('click', checkRankingSubmit);
+    })
+  }
+
+  const loadHTMLCards = () => {
+    // Available HTML Quizzes
+    const htmlQuizzes = [
+      {
+        title: 'HTML Tags',
+        intro: 'HTML elements and structure, the building blocks of websites.',
+        id: 'html_tags'
+      },
+      {
+        title: 'HTML Tables',
+        intro: 'the syntax you need to create tables in your HTML documents.',
+        id: 'html_tables' 
+      },
+      {
+        title: 'HTML Forms',
+        intro: 'the inner workings of an HTML form!',
+        id: 'html_forms' 
+      }
+    ];
+
+    $('.catalog').hide();
+    $('.languages').hide();
+    $('.outro').hide();
+    $('.html_cards').show();
+
+    htmlQuizzes.forEach(quiz => {
+      $('.js_cards .container').append(`<div class="card intro mt-3">
+      <div class= "card-header">
+        <h6 class="mt-1 mb-0 ml-1">Getting Started with JavaScript</h6>
+        <img src="./src/public/assets/images/drawkit-content-man-colour.svg" alt="">
+          </div>
+        <div class="card-body">
+          <h4 class="card-title">${quiz.title}</h4>
+          <p class="card-text">Practice ${quiz.intro}</p>
+        </div>
+        <div class="card-footer">
+          <img src="./src/public/assets/images/isolated-layout.svg" alt="">
+            <p id="${quiz.id}" class="start">Practice</p>
+          </div>`);
     })
   }
 
