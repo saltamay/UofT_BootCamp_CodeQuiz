@@ -14,8 +14,51 @@ const QuizGame = () => {
   const init = () => {
     $(document).ready(function () {
       // console.log(questions);
+      $('.js').on('click', loadJsCards)
       $('.start').on('click', startGame);
       $('.scores').on('click', checkRankingSubmit);
+    })
+  }
+
+  const loadJsCards = () => {
+    // Available JS Quizzes
+    const jsQuizzes = [
+      { 
+        title: 'Intro to Javascript',
+        intro: 'JavaScript data types, built-in methods, and variables.',
+        id: 'js_intro'
+      },
+      {
+        title: 'Conditional Statements',
+        intro: 'use of if, else if, else, switch, and ternary syntax to control the flow of a program in JavaScript.',
+        id: 'js_conditionals'
+      },
+      {
+        title: 'Functions',
+        intro: 'JavaScript function syntax, passing data to functions, the return keyword, ES6 arrow functions, and concise body syntax.',
+        id: 'js_functions'
+      } 
+    ];
+
+    $('.catalog').hide();
+    $('.languages').hide();
+    $('.outro').hide();
+    $('.js_cards').show();
+
+    jsQuizzes.forEach(quiz => {
+      $('.js_cards .container').append(`<div class="card intro mt-3">
+      <div class= "card-header">
+        <h6 class="mt-1 mb-0 ml-1">Getting Started with JavaScript</h6>
+        <img src="./src/public/assets/images/drawkit-content-man-colour.svg" alt="">
+          </div>
+        <div class="card-body">
+          <h4 class="card-title">${quiz.title}</h4>
+          <p class="card-text">Practice ${quiz.intro}</p>
+        </div>
+        <div class="card-footer">
+          <img src="./src/public/assets/images/isolated-layout.svg" alt="">
+            <p id="${quiz.id}" class="start">Practice</p>
+          </div>`);
     })
   }
 

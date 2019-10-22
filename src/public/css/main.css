@@ -82,14 +82,6 @@ nav {
   color: #00242B;
 }
 
-/* .languages {
-  background-image: url('../assets/images/revenue-graph-colour-400px.png');
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-size: 200px 200px;
-  background-origin: border-box;
-} */
-
 .languages h4 {
   color: #00242B;
   margin-bottom: 1.5rem;
@@ -148,7 +140,7 @@ footer {
   color: #7DE38D;
   
   position: relative;
-  top: -10px;
+  /* top: -10px; */
 
   text-align: center;
 }
