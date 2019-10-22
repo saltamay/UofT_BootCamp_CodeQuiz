@@ -28,6 +28,8 @@ const QuizGame = () => {
     // $('.intro').hide();
     // console.log('Hi!');
     $('.quiz_cards').hide();
+    $('.scores').show();
+    $('.time').show();
     $('.quiz').show();
 
     // Change bg color
@@ -203,7 +205,8 @@ const QuizGame = () => {
       }, 1000);
     } else {
       wrong++;
-      e.target.style.backgroundColor = 'red';
+      e.target.style.borderColor = '#e53935';
+      e.target.style.backgroundColor = '#661917';
       setTimeout(() => {
         totalTime -= 9;
         if (totalTime <= 0) {
