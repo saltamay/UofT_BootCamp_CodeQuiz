@@ -198,15 +198,34 @@ nav {
   text-align: right;
 }
 
+.score_table .card .card-header+.list-group .list-group-item:first-child {
+  border-top: 1px solid #7DE38D;
+}
+
+.score_table .card>.list-group:last-child .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom: 1px solid #7DE38D;
+    margin-bottom: 5rem;
+}
+
 .score_table .card {
   border: 0;
   background-color: #00242B;
+}
+
+.score_table .card h3 {
+  color: #fff;
 }
 
 .score_table .card ul li {
   background-color: #00242B;
   border: 1px solid #7DE38D;
   color: #fff;
+}
+
+.player_score {
+  float: right;
 }
 
 footer {

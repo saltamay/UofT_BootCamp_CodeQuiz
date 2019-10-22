@@ -282,7 +282,7 @@ const QuizGame = () => {
 
     const rankings = $(`<div class="card">
                       <div class= "card-header">
-                        Score Table
+                        <h3>Score Table</h3>
                       </div>
                     </div >`);
 
@@ -292,9 +292,9 @@ const QuizGame = () => {
       sortArray(players);
       players.forEach((player, index) => {
         if (currentPlayer.name === player.name) {
-          playerList.append(`<li class="list-group-item font-weight-bold mt-1">${index + 1}. ${player.name} ${player.score}</li>`);
+          playerList.append(`<li class="list-group-item font-weight-bold mt-1">${index + 1}. ${player.name} <span class="player_score">${player.score}</span></li>`);
         } else {
-          playerList.append(`<li class="list-group-item mt-1">${index + 1}. ${player.name} ${player.score}</li>`);
+          playerList.append(`<li class="list-group-item mt-1">${index + 1}. ${player.name} <span class="player_score">${player.score}</span></li>`);
         }
       })
     }
