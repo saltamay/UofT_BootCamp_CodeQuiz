@@ -15,6 +15,7 @@ const QuizGame = () => {
     $(document).ready(function () {
       // console.log(questions);
       $('.html').on('click', loadHTMLCards);
+      $('.css').on('click', loadCSSCards);
       $('.js').on('click', loadJsCards);
       $('.start').on('click', startGame);
       $('.scores').on('click', checkRankingSubmit);
@@ -47,6 +48,43 @@ const QuizGame = () => {
     $('.html_cards').show();
 
     htmlQuizzes.forEach(quiz => {
+      $('.js_cards .container').append(`<div class="card intro mt-3">
+      <div class= "card-header">
+        <h6 class="mt-1 mb-0 ml-1">Getting Started with JavaScript</h6>
+        <img src="./src/public/assets/images/drawkit-content-man-colour.svg" alt="">
+          </div>
+        <div class="card-body">
+          <h4 class="card-title">${quiz.title}</h4>
+          <p class="card-text">Practice ${quiz.intro}</p>
+        </div>
+        <div class="card-footer">
+          <img src="./src/public/assets/images/isolated-layout.svg" alt="">
+            <p id="${quiz.id}" class="start">Practice</p>
+          </div>`);
+    })
+  }
+
+  const loadCSSCards = () => {
+    // Available HTML Quizzes
+    const cssQuizzes = [
+      {
+        title: 'CSS Setup and Selectors',
+        intro: 'the fundamentals of CSS to add beautiful styling to your webpages.',
+        id: 'css_selectors'
+      },
+      {
+        title: 'CSS Visual Rules',
+        intro: 'how to style individual and groups of elements using various visual CSS rules.',
+        id: 'css_rules'
+      }
+    ];
+
+    $('.catalog').hide();
+    $('.languages').hide();
+    $('.outro').hide();
+    $('.css_cards').show();
+
+    cssQuizzes.forEach(quiz => {
       $('.js_cards .container').append(`<div class="card intro mt-3">
       <div class= "card-header">
         <h6 class="mt-1 mb-0 ml-1">Getting Started with JavaScript</h6>
