@@ -2,15 +2,15 @@ nav {
   background-color: #00242B;
 }
 
-.jumbotron {
-  background-color: #fff;
-  height: 275px;
-}
-
 .jumbotron.catalog {
   background-image: url('../assets/images/drawkit-full-stack-man-colour-400px.png');
   background-repeat: no-repeat;
   background-size: cover;
+
+  background-color: #fff;
+  height: 250px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .intro {
@@ -139,14 +139,18 @@ footer {
   background-color: #00242B;
   color: #7DE38D;
   
-  position: relative;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   /* top: -10px; */
 
   text-align: center;
 }
 
 footer p {
+  font-size: 0.75rem;
   margin: 0;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
