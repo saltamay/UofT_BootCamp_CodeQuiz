@@ -157,11 +157,11 @@ nav {
   cursor: pointer;
 }
 
-.card-header+.list-group .list-group-item:first-child {
+.quiz_card .card-header+.list-group .list-group-item:first-child {
   border-top: 1px solid #7DE38D;
 }
 
-.card>.list-group:last-child .list-group-item:last-child {
+.quiz_card.card>.list-group:last-child .list-group-item:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -169,6 +169,33 @@ nav {
 .quiz_card .list-group-item:first-child {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+.score.card {
+  border-color: #fff;
+  background-color: #00202b;
+}
+
+.score.card .card-header {
+  border-bottom-color: #fff;
+}
+
+.result {
+  color: #7DE38D;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.score.card ul {
+  width: 100%;
+}
+
+.score.card ul li {
+  border: 0;
+  color: #fff;
+  background-color: #00202b;
+  width: 33%;
+  text-align: right;
 }
 
 footer {

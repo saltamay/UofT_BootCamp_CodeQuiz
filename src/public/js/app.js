@@ -3,7 +3,7 @@
 const QuizGame = () => {
   
   // Set time
-  let totalTime = 100;
+  let totalTime = 5;
   let gameTime = 0;
 
   // Set scores
@@ -237,23 +237,27 @@ const QuizGame = () => {
 
   const displayScorecard = () => {
     $('.quiz').hide();
-    $('.score-card').show();
-    $('.score-card').html(`<div class="card" style="width: 18rem;">
-  <div class="card-header">
-    Score: ${gameTime}
-    <div class="input-group mb-3">
-    <input type="text" class="form-control player" placeholder="Initials" aria-label="Username" aria-describedby="basic-addon1">
-    <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button" id="nameSubmit">Submit</button>
-    </div>
-  </div>
-  </div>
-  <ul class="list-group list-group-flush d-flex flex-row">
-    <li class="list-group-item">${wrong}</li>
-    <li class="list-group-item">${correct}</li>
-    <li class="list-group-item">${(correct / total * 100).toFixed(0)}%</li>
-  </ul>
-</div>`)
+    $('.scores').hide();
+    $('.time').hide();
+
+    $('.score_card').html(
+      `<div class="card score">
+        <h1 class="title text-white text-center pt-5 pb-3 pl-4 pr-4">Quiz Scorecard</h1>
+        <div class="card-header">
+          <p class="result py-4">Score: ${gameTime}</p>
+        </div>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">${wrong}</li>
+          <li class="list-group-item">${correct}</li>
+          <li class="list-group-item">${(correct / total * 100).toFixed(0)}%</li>
+        </ul>
+      </div>
+      <div class="input-group mt-5">
+        <input type="text" class="form-control player" placeholder="Initials" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <button class="btn btn-outline-success" type="button" id="nameSubmit">Submit</button>
+        </div>
+      </div>`);
   } 
 
   const handleInputSubmit = (e) => {
