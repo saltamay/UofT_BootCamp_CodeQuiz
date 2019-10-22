@@ -17,9 +17,22 @@ const QuizGame = () => {
       $('.html').on('click', loadHTMLCards);
       $('.css').on('click', loadCSSCards);
       $('.js').on('click', loadJsCards);
-      $('.start').on('click', startGame);
+      // $('.js_intro').on('click', startGame);
       $('.scores').on('click', checkRankingSubmit);
     })
+  }
+
+  const startGame = (e) => {
+    // e.preventDefault();
+    // Hide intro and display quiz questions
+    // $('.intro').hide();
+    console.log('Hi!');
+    $('.js_cards').hide();
+    $('.quiz').show();
+
+    displayQuestion();
+    $('.time').text(totalTime);
+    stopWatch();
   }
 
   const loadHTMLCards = () => {
@@ -61,6 +74,7 @@ const QuizGame = () => {
           <img src="./src/public/assets/images/isolated-layout.svg" alt="">
             <p id="${quiz.id}" class="start">Practice</p>
           </div>`);
+      $('#' + quiz.id).on('click', startGame);
     })
   }
 
@@ -98,6 +112,7 @@ const QuizGame = () => {
           <img src="./src/public/assets/images/isolated-layout.svg" alt="">
             <p id="${quiz.id}" class="start">Practice</p>
           </div>`);
+      $('#' + quiz.id).on('click', startGame);
     })
   }
 
@@ -140,18 +155,8 @@ const QuizGame = () => {
           <img src="./src/public/assets/images/isolated-layout.svg" alt="">
             <p id="${quiz.id}" class="start">Practice</p>
           </div>`);
+      $('#' + quiz.id).on('click', startGame);
     })
-  }
-
-  const startGame = (e) => {
-    e.preventDefault();
-    // Hide intro and display quiz questions
-    $('.intro').hide();
-    $('.quiz').show();
-
-    displayQuestion();
-    $('.time').text(totalTime);
-    stopWatch();
   }
 
   const displayQuestion = () => {
@@ -316,8 +321,6 @@ const QuizGame = () => {
       localStorage.setItem('players', JSON.stringify(players));
     }
   }
-
-  
 
   init();
 }
