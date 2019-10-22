@@ -135,6 +135,11 @@ nav {
   z-index: -1;
 }
 
+.scores_nav {
+  border-color: #7DE38D;
+  color: #fff;
+}
+
 .scores,
 .time {
   color: #fff;
@@ -198,6 +203,10 @@ nav {
   text-align: right;
 }
 
+.score_table {
+  padding-bottom: 5rem;
+}
+
 .score_table .card .card-header+.list-group .list-group-item:first-child {
   border-top: 1px solid #7DE38D;
 }
@@ -206,7 +215,6 @@ nav {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     border-bottom: 1px solid #7DE38D;
-    margin-bottom: 5rem;
 }
 
 .score_table .card {

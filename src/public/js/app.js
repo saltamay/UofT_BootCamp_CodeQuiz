@@ -18,6 +18,7 @@ const QuizGame = () => {
       $('.css').on('click', loadCSSCards);
       $('.js').on('click', loadJsCards);
       // $('.js_intro').on('click', startGame);
+      $('.scores_nav').on('click', checkRankingSubmit);
       $('.scores').on('click', checkRankingSubmit);
     })
   }
@@ -277,7 +278,7 @@ const QuizGame = () => {
     displayRankings(player);
   }
 
-  const displayRankings = (currentPlayer) => {
+  const displayRankings = (currentPlayer = {}) => {
     const players = JSON.parse(localStorage.getItem('players'));
 
     const rankings = $(`<div class="card">
@@ -291,7 +292,7 @@ const QuizGame = () => {
     if(players !== null) {
       sortArray(players);
       players.forEach((player, index) => {
-        if (currentPlayer.name === player.name) {
+        if (currentPlayer.name === player.name && currentPlayer !== {}) {
           playerList.append(`<li class="list-group-item font-weight-bold mt-1">${index + 1}. ${player.name} <span class="player_score">${player.score}</span></li>`);
         } else {
           playerList.append(`<li class="list-group-item mt-1">${index + 1}. ${player.name} <span class="player_score">${player.score}</span></li>`);
@@ -303,9 +304,19 @@ const QuizGame = () => {
     $('.score_table').append(rankings);
   }
 
-  const checkRankingSubmit = () => {
-    $('.intro').hide();
-    displayRankings();
+  const checkRankingSubmit = (event) => {
+    if ($(event.target).hasClass('scores_nav')) {
+      $('.catalog').hide();
+      $('.languages').hide();
+      $('.outro').hide();
+      $('.scores_nav').prop('disabled', true);
+      displayRankings();
+    } else {
+      endGame();
+      $('.score_card').hide();
+      $('.scores_nav').prop('disabled', true);
+      displayRankings();
+    }
   }
 
   // Array that sorts the players array by the score
