@@ -3,7 +3,7 @@
 const QuizGame = () => {
   
   // Set time
-  let totalTime = 10;
+  let totalTime = 100;
   let gameTime = 0;
 
   // Set scores
@@ -26,11 +26,15 @@ const QuizGame = () => {
     // e.preventDefault();
     // Hide intro and display quiz questions
     // $('.intro').hide();
-    console.log('Hi!');
-    $('.js_cards').hide();
+    // console.log('Hi!');
+    $('.quiz_cards').hide();
     $('.quiz').show();
 
+    // Change bg color
+    document.getElementsByTagName('nav')[0].style.borderBottom = '1px solid #7DE38D';
+    document.getElementsByTagName('body')[0].style.backgroundColor = '#00242B';
     displayQuestion();
+
     $('.time').text(totalTime);
     stopWatch();
   }
@@ -58,10 +62,10 @@ const QuizGame = () => {
     $('.catalog').hide();
     $('.languages').hide();
     $('.outro').hide();
-    $('.html_cards').show();
+    $('.quiz_cards').show();
 
     htmlQuizzes.forEach(quiz => {
-      $('.js_cards .container').append(`<div class="card intro mt-3">
+      $('.quiz_cards .container').append(`<div class="card intro mt-3">
       <div class= "card-header">
         <h6 class="mt-1 mb-0 ml-1">Getting Started with JavaScript</h6>
         <img src="./src/public/assets/images/drawkit-content-man-colour.svg" alt="">
@@ -96,10 +100,10 @@ const QuizGame = () => {
     $('.catalog').hide();
     $('.languages').hide();
     $('.outro').hide();
-    $('.css_cards').show();
+    $('.quiz_cards').show();
 
     cssQuizzes.forEach(quiz => {
-      $('.js_cards .container').append(`<div class="card intro mt-3">
+      $('.quiz_cards .container').append(`<div class="card intro mt-3">
       <div class= "card-header">
         <h6 class="mt-1 mb-0 ml-1">Getting Started with JavaScript</h6>
         <img src="./src/public/assets/images/drawkit-content-man-colour.svg" alt="">
@@ -139,10 +143,10 @@ const QuizGame = () => {
     $('.catalog').hide();
     $('.languages').hide();
     $('.outro').hide();
-    $('.js_cards').show();
+    $('.quiz_cards').show();
 
     jsQuizzes.forEach(quiz => {
-      $('.js_cards .container').append(`<div class="card intro mt-3">
+      $('.quiz_cards .container').append(`<div class="card intro mt-3">
       <div class= "card-header">
         <h6 class="mt-1 mb-0 ml-1">Getting Started with JavaScript</h6>
         <img src="./src/public/assets/images/drawkit-content-man-colour.svg" alt="">
@@ -161,19 +165,19 @@ const QuizGame = () => {
 
   const displayQuestion = () => {
     const question = questions.shift();
-    console.log(questions);
-    const quiz = $(`<div class="card" style="width: 18rem;">
+    // console.log(questions);
+    const quiz = $(`<div class="card quiz_card text-white">
                       <div class= "card-header">
                         ${question.title}
                       </div>
                     </div >`);
 
-    const choicesList = $('<ul class="list-group list-group-flush"></ul>');
+    const choicesList = $('<ul class="list-group"></ul>');
 
     choicesList.on('click', (e) => { handleAnswerClick(e, question.answer) })
 
     question['choices'].forEach(choice => {
-      choicesList.append(`<li type="button" class="list-group-item mt-3">${choice}</li>`);
+      choicesList.append(`<li  class="list-group-item mt-3">${choice}</li>`);
     })
     quiz.append(choicesList);
     $('.quiz').append(quiz);
@@ -183,7 +187,7 @@ const QuizGame = () => {
     e.preventDefault();
 
     if ($(e.target).html() === answer) {
-      e.target.style.backgroundColor = 'green';
+      e.target.style.backgroundColor = '#164032';
       correct++;
       totalTime++;
       setTimeout(() => {

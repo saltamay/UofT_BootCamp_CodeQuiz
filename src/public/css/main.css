@@ -124,7 +124,7 @@ nav {
   height: 200px;
 }
 
-.background {
+.outro .background {
   display: block;
   height: 300px;
   position: relative;
@@ -133,6 +133,36 @@ nav {
   width: 100%;
   margin: 0 auto;
   z-index: -1;
+}
+
+.quiz_card {
+  border: none;
+  border-radius: 0;
+
+  background-color: #00242B;
+}
+
+.quiz_card ul li {
+  background-color: #00242B;
+  border: 1px solid #7DE38D;
+}
+
+.quiz_card ul li:hover {
+  cursor: pointer;
+}
+
+.card-header+.list-group .list-group-item:first-child {
+  border-top: 1px solid #7DE38D;
+}
+
+.quiz_card .list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.quiz_card .list-group-item:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 footer {
