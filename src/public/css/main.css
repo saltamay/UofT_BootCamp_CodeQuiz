@@ -198,6 +198,17 @@ nav {
   text-align: right;
 }
 
+.score_table .card {
+  border: 0;
+  background-color: #00242B;
+}
+
+.score_table .card ul li {
+  background-color: #00242B;
+  border: 1px solid #7DE38D;
+  color: #fff;
+}
+
 footer {
   background-color: #00242B;
   color: #7DE38D;

@@ -264,8 +264,8 @@ const QuizGame = () => {
 
     e.preventDefault();
 
-    $('.score-card').hide();
-    $('.score-table').show();
+    $('.score_card').hide();
+    // $('.score_table').show();
 
     const playerName = $('.player').val();
     const player = {
@@ -279,18 +279,8 @@ const QuizGame = () => {
 
   const displayRankings = (currentPlayer) => {
     const players = JSON.parse(localStorage.getItem('players'));
-    
-    if(players !== null) {
-      sortArray(players);
-      players.forEach((player, index) => {
-        if (currentPlayer.name === player.name) {
-          playerList.append(`<li type="button" class="list-group-item font-weight-bold mt-3">${index + 1}. ${player.name} ${player.score}</li>`);
-        } else {
-          playerList.append(`<li type="button" class="list-group-item mt-3">${index + 1}. ${player.name} ${player.score}</li>`);
-        }
-      })
-    }
-    const rankings = $(`<div class="card" style="width: 18rem;">
+
+    const rankings = $(`<div class="card">
                       <div class= "card-header">
                         Score Table
                       </div>
@@ -298,8 +288,19 @@ const QuizGame = () => {
 
     const playerList = $('<ul class="list-group list-group-flush"></ul>');
     
+    if(players !== null) {
+      sortArray(players);
+      players.forEach((player, index) => {
+        if (currentPlayer.name === player.name) {
+          playerList.append(`<li class="list-group-item font-weight-bold mt-1">${index + 1}. ${player.name} ${player.score}</li>`);
+        } else {
+          playerList.append(`<li class="list-group-item mt-1">${index + 1}. ${player.name} ${player.score}</li>`);
+        }
+      })
+    }
+    
     rankings.append(playerList);
-    $('.score-table').append(rankings);
+    $('.score_table').append(rankings);
   }
 
   const checkRankingSubmit = () => {
