@@ -1,4 +1,7 @@
-# Interview Camp
+# UofT SCS Full-Stack Web Development Boot Camp Project #4: Code Quiz
+
+# [Interview Camp](https://saltamay.github.io/UofT_BootCamp_CodeQuiz/)
+
 A timed quiz application with multiple choice questions on JavaScript fundamentals that stores high scores for users to gauge progress compared to peers
 
 ## Table of Contents
